@@ -1,0 +1,8 @@
+
+Generate a script for a one minute radio segment about traffic. 
+
+Here is the current traffic:
+
+@LOOP_START
+[STREET_NAME] has [CAR_COUNT] cars on it. It has room for [CAR_SPACE] cars. It is [PERCENT] full.
+@LOOP_END

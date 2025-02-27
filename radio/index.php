@@ -1,6 +1,7 @@
 <?php
 
-include('../functions.php'); 
+include('../includes/functions.php'); 
+include('../includes/config.php'); 
 
 ?>
 <!DOCTYPE html>
@@ -30,18 +31,40 @@ include('../functions.php');
     background-color: #fff;
   }
 
-  #step-1 {
+  #step-1,
+  #overlay {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
   }
-  #step-1-box {
+  #step-1-box,
+  #overlay-box {
     position: relative;
     text-align: center;
     width: 100%;
   }
 
+  #overlay {
+    background-color: rgba(0, 0, 0, 0.8);
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    z-index: 100;
+    display: none;
+  }
+
+  #response_input,
+  #script_input {
+    -display: none;
+  }
+
+  textarea { 
+    height: 300px; 
+    max-height: 60%;
+    box-sizing: border-box;
+    width: 100%;
+  }
     
   </style>
 
@@ -50,6 +73,19 @@ include('../functions.php');
   </head>
 <body>
 
+  <div id="overlay">
+      <div id="overlay-box">
+
+          <div class="w3-panel w3-black w3-center">
+              <h2>
+                  <i class="fas fa-spinner fa-spin"></i>
+                  <span id="message"></span>
+              </h2>
+          </div>
+
+      </div>
+  </div>
+
   <div id="step-1">
 
     <div id="step-1-box">
@@ -57,14 +93,30 @@ include('../functions.php');
 
         <div class="w3-container" style="max-width:1200px; margin: auto;">
 
-            <textarea class="w3-input w3-border w3-margin-bottom" style="height: 500px; max-height: 80%;" id="prompt"></textarea>
+            <button type="button" id="prompt_button" class="w3-btn w3-padding w3-black w3-margin-bottom">
+                <i class="fas fa-terminal"></i> Prompt
+            </button>
+            <button type="button" id="response_button" class="w3-btn w3-padding w3-black w3-margin-bottom">
+                <i class="fas fa-reply"></i> Response
+            </button>
+            <button type="button" id="script_button" class="w3-btn w3-padding w3-black w3-margin-bottom">
+                <i class="fas fa-scroll"></i> Script
+            </button>
+
+            <textarea class="w3-input w3-border w3-margin-bottom" id="prompt_input"></textarea>
+            <textarea class="w3-input w3-border w3-margin-bottom" id="response_input"></textarea>
+            <textarea class="w3-input w3-border w3-margin-bottom" id="script_input"></textarea>
             
-            <button type="button" id="generate" class="w3-btn w3-padding w3-black">
+            <button type="button" id="generate_button" class="w3-btn w3-padding w3-black">
                 <i class="fas fa-play"></i> Generate Audio
             </button>
-            <button type="button" id="reset" class="w3-btn w3-padding w3-black">
+            <button type="button" id="reset_button" class="w3-btn w3-padding w3-black">
                 <i class="fas fa-undo-alt"></i> Reset
             </button>
+
+            <div class="w3-container w3-margin-top">
+                <audio controls id="audio"></audio>
+            </div>
 
         </div>
   

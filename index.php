@@ -1,6 +1,7 @@
 <?php
 
-include('functions.php'); 
+include('includes/functions.php');
+include('includes/config.php');
 
 ?>
 <!DOCTYPE html>
