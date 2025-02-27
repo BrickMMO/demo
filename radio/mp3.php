@@ -31,4 +31,6 @@ fwrite($file, $response);
 
 $data = array('filename' => $filename);
 
+sleep(1);
+
 echo json_encode($data);

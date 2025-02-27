@@ -3,6 +3,25 @@
 include('../includes/functions.php'); 
 include('../includes/config.php'); 
 
+if ($handle = opendir('audio')) 
+{
+    while (false !== ($file = readdir($handle))) 
+    {
+        if ($file != "." && $file != "..") 
+        {
+            // echo 'File: '.$file.'<br>';
+            // echo 'Time: '.filemtime('audio/'.$file).'<br>';
+
+            if(filemtime('audio/'.$file) < time() - 60 * 60 * 3)
+            { 
+                // echo 'Delete: audio/'.$file.'<br>';
+                unlink('audio/'.$file);
+            }
+        }
+    }
+    closedir($handle);
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
