@@ -3,6 +3,12 @@
 include('../includes/functions.php'); 
 include('../includes/config.php'); 
 
+// Check if audio directory exists and create it if it does not
+if (!is_dir('audio')) 
+{
+    mkdir('audio', 0755, true);
+}
+
 if ($handle = opendir('audio')) 
 {
     while (false !== ($file = readdir($handle))) 

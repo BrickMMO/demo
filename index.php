@@ -78,7 +78,7 @@ include('includes/config.php');
 
   <?php brickmmo_footer(); ?>
 
-  <script src="https://cdn.brickmmo.com/bar@1.0.0/bar.js"></script>
+  <script src="https://cdn.brickmmo.com/bar@1.1.0/bar.js"></script>
 
 </body>
 </html>
