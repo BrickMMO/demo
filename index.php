@@ -78,7 +78,14 @@ include('includes/config.php');
 
   <?php brickmmo_footer(); ?>
 
-  <script src="https://cdn.brickmmo.com/bar@1.1.0/bar.js"></script>
+  <script 
+        src="<?=ENV_LOCAL ? 'http://sso.local.brickmmo.com/bar.js' : 'https://cdn.brickmmo.com/bar@1.1.0/bar.js'?>"
+        data-console="false"
+        data-menu="false"
+        data-admin="false"
+        data-local="<?=ENV_LOCAL ? 'true' : 'false'?>"
+        data-https="<?=ENV_LOCAL ? 'false' : 'true'?>"
+  ></script>
 
 </body>
 </html>
