@@ -149,12 +149,18 @@ if ($handle = opendir('audio'))
 
   </div>
 
-  <?php brickmmo_footer('light'); ?>
+  <?php // brickmmo_footer('light'); ?>
 
   <script src="radio.js"></script>
 
-  <script src="https://cdn.brickmmo.com/bar@1.0.0/bar.js"></script>
-
+  <script 
+    src="<?=ENV_LOCAL ? 'http://sso.local.brickmmo.com/bar.js' : 'https://cdn.brickmmo.com/bar@1.1.0/bar.js'?>"
+    data-console="false"
+    data-menu="false"
+    data-admin="false"
+    data-local="<?=ENV_LOCAL ? 'true' : 'false'?>"
+    data-https="<?=ENV_LOCAL ? 'false' : 'true'?>"
+  ></script>
 
 </body>
 </html>

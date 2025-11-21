@@ -28,7 +28,7 @@ include('includes/config.php');
     height: 100%;
     font-family: 'Lora', serif;
     color: #fff;
-    background-color: #848484;
+    background-color: #000;
   }
 
   #step-1 {
@@ -76,7 +76,7 @@ include('includes/config.php');
 
   </div>
 
-  <?php brickmmo_footer(); ?>
+  <?php // brickmmo_footer(); ?>
 
   <script 
         src="<?=ENV_LOCAL ? 'http://sso.local.brickmmo.com/bar.js' : 'https://cdn.brickmmo.com/bar@1.1.0/bar.js'?>"
