@@ -54,12 +54,11 @@ include('includes/config.php');
     box-sizing: border-box;
   }
 
-
-
-    
   </style>
 
-  </head>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+</head>
 <body>
 
   <div id="step-1">
