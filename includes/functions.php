@@ -40,7 +40,7 @@ a:visited {
 <div id="brickmmo">
 
     <?php if($_SERVER["REQUEST_URI"] != "/"): ?>
-        <a href="/"><i class="fas fa-bars"></i></a>
+        <a href="<?=ENV_DOMAIN?>/"><i class="fas fa-bars"></i></a>
         &nbsp;
     <?php endif; ?>
 

@@ -56,7 +56,7 @@ include('includes/config.php');
 
   </style>
 
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="<?=ENV_DOMAIN?>/favicon.ico">
 
 </head>
 <body>
@@ -66,7 +66,7 @@ include('includes/config.php');
     <div id="step-1-box">
 
         <div class="assignment">
-            <a href="/radio">
+            <a href="<?=ENV_DOMAIN?>/radio">
                 <img src="/images/radio.png">
             </a>
         </div>
